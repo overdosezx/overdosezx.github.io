@@ -1042,6 +1042,83 @@
             .transaction-summary {
                 grid-template-columns: 1fr;
             }
+        } 
+        @media (max-width: 768px) {
+            body {
+                padding: 10px; 
+            }
+            .container {
+                padding: 15px;
+                border-radius: 10px;
+            }
+        
+            h1 {
+                font-size: 1.6em;
+            }
+            .salary-amount {
+                font-size: 1.8em;
+            }
+            .salary-main {
+                padding: 20px;
+                width: 100%;
+            }
+            .allocation-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            .allocation-badge {
+                margin-left: 0;
+            }
+            .allocation-amount {
+                font-size: 1.8em;
+            } 
+            .tracker-section {
+                padding: 15px;
+            }
+        
+            .transaction-summary {
+                grid-template-columns: 1fr; 
+            } 
+            .input-field, .btn-add, .tab-btn {
+                font-size: 16px; 
+                padding: 12px;
+            }
+            .progress-legend {
+                flex-direction: column;
+                gap: 5px;
+            } 
+            .phase-header {
+                flex-wrap: wrap;
+            }
+            .phase-duration {
+                margin-left: 0;
+                margin-top: 5px;
+                width: 100%;
+                text-align: center;
+            } 
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+            .timeline {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            .month {
+                padding: 10px;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            }
+        }
+        @media (max-width: 380px) {
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+            .salary-amount {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
