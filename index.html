@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Mapping Dana Darurat - 6 Bulan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+        
+        /* Salary Breakdown Styles */
+        .salary-breakdown {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            color: white;
+            box-shadow: 0 10px 40px rgba(245, 87, 108, 0.3);
+        }
+        
+        .breakdown-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .salary-info {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .salary-main {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px 60px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .salary-amount {
+            font-size: 3em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .salary-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .allocation-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            color: #333;
+        }
+        
+        .allocation-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .allocation-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .allocation-icon {
+            font-size: 1.5em;
+        }
+        
+        .allocation-title {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .allocation-badge {
+            background: #ffd700;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: auto;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .allocation-amount {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .allocation-percentage {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .allocation-note {
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+        
+        .remaining-amount {
+            background: #fff4e6;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.2em;
+            border: 2px dashed #ff9800;
+        }
+        
+        .remaining-amount strong {
+            color: #ff6b6b;
+            font-size: 1.4em;
+            display: block;
+            margin-top: 5px;
+        }
+        
+        .expense-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .expense-category {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid #e9ecef;
+        }
+        
+        .expense-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        .expense-icon {
+            font-size: 1.5em;
+        }
+        
+        .expense-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #495057;
+        }
+        
+        .expense-total {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .expense-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .expense-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            background: white;
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+        
+        .expense-value {
+            font-weight: bold;
+            color: #495057;
+        }
+        
+        .final-balance {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f8f9ff 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .balance-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        .balance-item.surplus {
+            border-top: 2px solid #667eea;
+            margin-top: 10px;
+            padding-top: 15px;
+            font-size: 1.3em;
+        }
+        
+        .balance-item.surplus strong {
+            color: #10b981;
+        }
+        
+        .balance-note {
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 6px;
+            font-size: 0.9em;
+            color: #667eea;
+            text-align: center;
+        }
+        
+        .comparison-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .comparison-column {
+            background: rgba(239, 68, 68, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .comparison-column.success {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+        
+        .comparison-column h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .comparison-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .comparison-column li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.5;
+        }
+        
+        .comparison-column li:before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            font-size: 1.5em;
+        }
+        
+        .mind-map {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .phase {
+            background: #f8f9ff;
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 6px solid #667eea;
+            position: relative;
+        }
+        
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .phase-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .phase-title {
+            font-size: 1.8em;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .phase-duration {
+            background: #ffd700;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-left: auto;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .step {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #e0e7ff;
+            transition: all 0.3s;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+        
+        .step-title {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .step-icon {
+            font-size: 1.3em;
+        }
+        
+        .step-content {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .step-content ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+        
+        .step-content li {
+            margin: 5px 0;
+        }
+        
+        .highlight {
+            background: #fff4e6;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+        
+        .success {
+            background: #d4edda;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #155724;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            padding: 20px;
+            background: linear-gradient(90deg, #e0e7ff 0%, #f8f9ff 100%);
+            border-radius: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .month {
+            text-align: center;
+            flex: 1;
+            min-width: 100px;
+        }
+        
+        .month-number {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 5px;
+            font-weight: bold;
+        }
+        
+        .month-amount {
+            font-size: 0.9em;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .month-total {
+            font-size: 0.8em;
+            color: #666;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .summary-box h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                flex-direction: column;
+            }
+        }
+        
+        /* Tracker Section Styles */
+        .tracker-section {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+            border: 3px solid #e9ecef;
+        }
+        
+        .tracker-title {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .tracker-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .tracker-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .input-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .input-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .tab-btn {
+            flex: 1;
+            padding: 12px 20px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #495057;
+        }
+        
+        .tab-btn:hover {
+            background: #e9ecef;
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .input-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #495057;
+            font-weight: 600;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .btn-add {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .btn-add:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-add:active {
+            transform: translateY(0);
+        }
+        
+        .salary-list-mini {
+            margin-top: 15px;
+        }
+        
+        .salary-record {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid #667eea;
+        }
+        
+        .salary-record.positive {
+            border-left-color: #10b981;
+            background: #f0fdf4;
+        }
+        
+        .salary-record.negative {
+            border-left-color: #ef4444;
+            background: #fef2f2;
+        }
+        
+        .btn-reset {
+            background: #f3f4f6;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.2s;
+        }
+        
+        .btn-reset:hover {
+            background: #667eea;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .summary-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .summary-section h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        
+        .transaction-summary {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .summary-card {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .summary-card.negative {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+        
+        .summary-card-icon {
+            font-size: 2.5em;
+        }
+        
+        .summary-card-content {
+            flex: 1;
+        }
+        
+        .summary-card-label {
+            font-size: 0.85em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .summary-card-value {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .expense-list {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 25px;
+            padding-right: 10px;
+        }
+        
+        .empty-state {
+            text-align: center;
+            color: #999;
+            padding: 40px 20px;
+            font-style: italic;
+        }
+        
+        .expense-record {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid #ef4444;
+        }
+        
+        .expense-record-info {
+            flex: 1;
+        }
+        
+        .expense-record-month {
+            font-size: 0.85em;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        
+        .expense-record-desc {
+            font-size: 1em;
+            color: #333;
+            margin-bottom: 3px;
+        }
+        
+        .expense-record-amount {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ef4444;
+        }
+        
+        .btn-delete {
+            background: #fee;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: all 0.2s;
+        }
+        
+        .btn-delete:hover {
+            background: #ef4444;
+            transform: scale(1.1);
+        }
+        
+        .impact-summary {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f8f9ff 100%);
+            padding: 25px;
+            border-radius: 12px;
+        }
+        
+        .impact-summary h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .impact-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .impact-item.highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            grid-column: 1 / -1;
+        }
+        
+        .impact-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box .impact-label {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .impact-value {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .impact-value.original {
+            color: #10b981;
+        }
+        
+        .impact-value.danger {
+            color: #ef4444;
+        }
+        
+        .impact-value.final {
+            color: white;
+            font-size: 2em;
+        }
+        
+        .recommendations {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .recommendations h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .recommendations p {
+            line-height: 1.8;
+            color: #495057;
+        }
+        
+        .visual-progress {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .visual-progress h3 {
+            color: #667eea;
+            margin-bottom: 25px;
+            font-size: 1.3em;
+        }
+        
+        .progress-container {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .month-progress {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+        }
+        
+        .month-progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .month-progress-label {
+            font-weight: bold;
+            color: #495057;
+        }
+        
+        .month-progress-amount {
+            font-weight: bold;
+            color: #10b981;
+        }
+        
+        .month-progress-amount.positive {
+            color: #10b981;
+        }
+        
+        .month-progress-amount.warning {
+            color: #f59e0b;
+        }
+        
+        .month-progress-amount.negative {
+            color: #ef4444;
+        }
+        
+        .month-salary-info {
+            background: #e0f2fe;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            color: #0369a1;
+            border-left: 3px solid #0ea5e9;
+        }
+        
+        .month-expenses {
+            background: #fee;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border-left: 3px solid #ef4444;
+        }
+        
+        .mini-expense {
+            font-size: 0.9em;
+            color: #dc2626;
+            margin: 3px 0;
+        }
+        
+        .progress-bar-container {
+            position: relative;
+        }
+        
+        .progress-bar-bg {
+            background: #e9ecef;
+            height: 30px;
+            border-radius: 15px;
+            overflow: visible;
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            transition: width 0.5s ease;
+            border-radius: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .progress-bar-fill.ideal {
+            background: rgba(156, 163, 175, 0.3);
+            z-index: 1;
+        }
+        
+        .progress-bar-fill.actual {
+            z-index: 2;
+        }
+        
+        .progress-bar-fill.actual.positive {
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+        }
+        
+        .progress-bar-fill.actual.warning {
+            background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+        }
+        
+        .progress-bar-fill.actual.negative {
+            background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+        }
+        
+        .progress-legend {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85em;
+            margin-top: 8px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+        }
+        
+        .legend-color.ideal {
+            background: rgba(156, 163, 175, 0.5);
+        }
+        
+        .legend-color.actual {
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+        }
+        
+        @media (max-width: 992px) {
+            .tracker-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .transaction-summary {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 RENCANA DANA DARURAT</h1>
+        <p class="subtitle">Mind Mapping: Dari Nol sampai Rp 18 Juta dalam 6 Bulan</p>
+        
+        <!-- SALARY BREAKDOWN SECTION -->
+        <div class="salary-breakdown">
+            <h2 class="breakdown-title">💰 BREAKDOWN GAJI BULANAN</h2>
+            <div class="salary-info">
+                <div class="salary-main">
+                    <div class="salary-amount">Rp 5.357.982</div>
+                    <div class="salary-label">Gaji Bersih per Bulan</div>
+                </div>
+            </div>
+            
+            <div class="allocation-container">
+                <div class="allocation-item priority-1">
+                    <div class="allocation-header">
+                        <span class="allocation-icon">🎯</span>
+                        <span class="allocation-title">PRIORITAS #1: DANA DARURAT</span>
+                        <span class="allocation-badge">LANGSUNG!</span>
+                    </div>
+                    <div class="allocation-amount">Rp 3.500.000</div>
+                    <div class="allocation-percentage">65.3% dari gaji</div>
+                    <div class="allocation-note">Transfer otomatis ke rekening terpisah begitu gaji masuk!</div>
+                </div>
+                
+                <div class="remaining-amount">
+                    <span>Sisa untuk kebutuhan bulanan:</span>
+                    <strong>Rp 1.857.982</strong>
+                </div>
+                
+                <div class="expense-grid">
+                    <div class="expense-category">
+                        <div class="expense-header">
+                            <span class="expense-icon">🏠</span>
+                            <span class="expense-title">Kebutuhan Pokok</span>
+                        </div>
+                        <div class="expense-total">Rp 1.200.000</div>
+                        <div class="expense-items">
+                            <div class="expense-item">
+                                <span>Uang untuk Orang Tua</span>
+                                <span class="expense-value">Rp 500.000</span>
+                            </div>
+                            <div class="expense-item">
+                                <span>Makan & Jajan</span>
+                                <span class="expense-value">Rp 400.000</span>
+                            </div>
+                            <div class="expense-item">
+                                <span>Transportasi</span>
+                                <span class="expense-value">Rp 200.000</span>
+                            </div>
+                            <div class="expense-item">
+                                <span>Pulsa & Internet</span>
+                                <span class="expense-value">Rp 100.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="expense-category">
+                        <div class="expense-header">
+                            <span class="expense-icon">🎨</span>
+                            <span class="expense-title">Gaya Hidup</span>
+                        </div>
+                        <div class="expense-total">Rp 600.000</div>
+                        <div class="expense-items">
+                            <div class="expense-item">
+                                <span>Hiburan & Nongkrong</span>
+                                <span class="expense-value">Rp 200.000</span>
+                            </div>
+                            <div class="expense-item">
+                                <span>Shopping (Pakaian, dll)</span>
+                                <span class="expense-value">Rp 150.000</span>
+                            </div>
+                            <div class="expense-item">
+                                <span>Skill Development</span>
+                                <span class="expense-value">Rp 150.000</span>
+                            </div>
+                            <div class="expense-item">
+                                <span>Langganan Digital</span>
+                                <span class="expense-value">Rp 100.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="final-balance">
+                    <div class="balance-item">
+                        <span>Total Pengeluaran:</span>
+                        <span>Rp 5.300.000</span>
+                    </div>
+                    <div class="balance-item surplus">
+                        <span>💚 Sisa/Buffer:</span>
+                        <strong>Rp 57.982</strong>
+                    </div>
+                    <div class="balance-note">
+                        Sisa ini bisa masuk tambahan dana darurat atau tabungan bonus!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comparison-box">
+                <div class="comparison-column">
+                    <h3>❌ CARA SALAH</h3>
+                    <ul>
+                        <li>Gaji masuk → langsung belanja</li>
+                        <li>Nabung dari "sisa" akhir bulan</li>
+                        <li>Biasanya sisa cuma Rp 0-500rb</li>
+                        <li>Target 6 bulan = GAGAL!</li>
+                    </ul>
+                </div>
+                <div class="comparison-column success">
+                    <h3>✅ CARA BENAR</h3>
+                    <ul>
+                        <li>Gaji masuk → LANGSUNG nabung Rp 3.5 juta</li>
+                        <li>Sisanya baru untuk kebutuhan</li>
+                        <li>Dipaksa hidup dengan budget ketat</li>
+                        <li>Target 6 bulan = TERCAPAI! 🎉</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mind-map">
+            
+            <!-- FASE 1: PERSIAPAN -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">1</div>
+                    <div class="phase-title">PERSIAPAN AWAL</div>
+                    <div class="phase-duration">Minggu 1-2</div>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-icon">🏦</span>
+                            Buka Rekening Terpisah
+                        </div>
+                        <div class="step-content">
+                            <strong>Pilihan Bank:</strong>
+                            <ul>
+                                <li><span class="highlight">Seabank</span> - Bunga 4-6%</li>
+                                <li><span class="highlight">Bank Jago</span> - Fitur Kantong</li>
+                                <li><span class="highlight">Blu BCA</span> - Bunga 4%</li>
+                            </ul>
+                            <strong>Tips:</strong> Jangan aktifkan kartu ATM atau simpan di rumah!
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-icon">📱</span>
+                            Siapkan Auto-Debit
+                        </div>
+                        <div class="step-content">
+                            <ul>
+                                <li>Set transfer otomatis <span class="highlight">Rp 3.500.000</span> tiap tanggal gajian</li>
+                                <li>Dari rekening utama → rekening dana darurat</li>
+                                <li>Supaya nggak tergoda pakai uangnya</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-icon">📊</span>
+                            Buat Tracker
+                        </div>
+                        <div class="step-content">
+                            <ul>
+                                <li>Excel/Google Sheets untuk catat progress</li>
+                                <li>Atau pakai app: Money Lover, Finansialku</li>
+                                <li>Update setiap bulan untuk motivasi!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FASE 2: PENGUMPULAN -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">2</div>
+                    <div class="phase-title">PENGUMPULAN INTENSIF</div>
+                    <div class="phase-duration">Bulan 1-6</div>
+                </div>
+                
+                <div class="timeline">
+                    <div class="month">
+                        <div class="month-number">1</div>
+                        <div class="month-amount">+3,5 jt</div>
+                        <div class="month-total">Total: 3,5 jt</div>
+                    </div>
+                    <div class="month">
+                        <div class="month-number">2</div>
+                        <div class="month-amount">+3,5 jt</div>
+                        <div class="month-total">Total: 7 jt</div>
+                    </div>
+                    <div class="month">
+                        <div class="month-number">3</div>
+                        <div class="month-amount">+3,5 jt</div>
+                        <div class="month-total">Total: 10,5 jt</div>
+                    </div>
+                    <div class="month">
+                        <div class="month-number">4</div>
+                        <div class="month-amount">+3,5 jt</div>
+                        <div class="month-total">Total: 14 jt</div>
+                    </div>
+                    <div class="month">
+                        <div class="month-number">5</div>
+                        <div class="month-amount">+3,5 jt</div>
+                        <div class="month-total">Total: 17,5 jt</div>
+                    </div>
+                    <div class="month">
+                        <div class="month-number">6</div>
+                        <div class="month-amount">+500rb</div>
+                        <div class="month-total">Total: 18 jt ✅</div>
+                    </div>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-icon">💰</span>
+                            Hari Gajian (Hari H)
+                        </div>
+                        <div class="step-content">
+                            <ol>
+                                <li>Gaji masuk ke rekening utama</li>
+                                <li><span class="highlight">LANGSUNG</span> transfer Rp 3.500.000 ke rekening dana darurat</li>
+                                <li>Sisanya baru untuk kebutuhan bulanan</li>
+                            </ol>
+                            <strong>Prinsip:</strong> Bayar diri sendiri dulu! 💪
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-icon">🎯</span>
+                            Strategi Hemat
+                        </div>
+                        <div class="step-content">
+                            <ul>
+                                <li>🍱 Bawa bekal dari rumah</li>
+                                <li>☕ Ngopi di rumah, bukan kafe</li>
+                                <li>🚗 Naik motor/transport umum</li>
+                                <li>🎮 Hiburan gratis: YouTube, jalan ke taman</li>
+                                <li>🛍️ Tunda shopping yang nggak urgent</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-icon">⚡</span>
+                            Bonus & Percepatan
+                        </div>
+                        <div class="step-content">
+                            <strong>Kalau ada uang ekstra:</strong>
+                            <ul>
+                                <li>THR → <span class="success">100% masuk dana darurat</span></li>
+                                <li>Bonus kerja → Minimal 50% masuk</li>
+                                <li>Uang angpao/hadiah → Masuk juga!</li>
+                            </ul>
+                            Target bisa tercapai lebih cepat! 🚀
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FASE 3: ALOKASI -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">3</div>
+                    <div class="phase-title">ALOKASI & OPTIMASI</div>
+                    <div class="phase-duration">Setelah 6 Bulan</div>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-icon">💳</span>
+                            LAPIS 1: Tabungan Biasa (30%)
+                        </div>
+                        <div class="step-content">
+                            <strong>Jumlah: <span class="highlight">Rp 5.400.000</span></strong>
+                            <ul>
+                                <li>Tetap di rekening bank biasa</li>
+                                <li>Untuk darurat mendadak</li>
+                                <li>Bisa diambil kapan saja</li>
+                            </ul>
+                            <strong>Aksi:</strong> Jangan dipindahkan, biarkan di rekening dana darurat
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-icon">🏛️</span>
+                            LAPIS 2: Deposito (50%)
+                        </div>
+                        <div class="step-content">
+                            <strong>Jumlah: <span class="highlight">Rp 9.000.000</span></strong>
+                            <ul>
+                                <li>Buka deposito 3 bulan</li>
+                                <li>Bunga ±3-4% per tahun</li>
+                                <li>Auto-renewal setiap 3 bulan</li>
+                            </ul>
+                            <strong>Cara:</strong>
+                            <ol>
+                                <li>Ke bank/buka via mobile banking</li>
+                                <li>Pilih tenor 3 bulan</li>
+                                <li>Aktifkan perpanjangan otomatis (ARO)</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-icon">📈</span>
+                            LAPIS 3: Reksadana Pasar Uang (20%)
+                        </div>
+                        <div class="step-content">
+                            <strong>Jumlah: <span class="highlight">Rp 3.600.000</span></strong>
+                            <ul>
+                                <li>Return 4-6% per tahun</li>
+                                <li>Risiko rendah, liquid 2-3 hari</li>
+                            </ul>
+                            <strong>Cara:</strong>
+                            <ol>
+                                <li>Download app: <strong>Bibit</strong> atau <strong>Bareksa</strong></li>
+                                <li>Registrasi + verifikasi KTP</li>
+                                <li>Pilih produk "Reksadana Pasar Uang"</li>
+                                <li>Contoh: Manulife Dana Kas, Sucorinvest Money Market</li>
+                                <li>Transfer Rp 3.600.000</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FASE 4: MAINTENANCE -->
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-number">4</div>
+                    <div class="phase-title">MAINTENANCE & NEXT STEP</div>
+                    <div class="phase-duration">Bulan 7+</div>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-icon">🔒</span>
+                            Jaga Dana Darurat
+                        </div>
+                        <div class="step-content">
+                            <ul>
+                                <li><strong>JANGAN DIPAKAI</strong> kecuali benar-benar darurat</li>
+                                <li>Darurat = kehilangan pekerjaan, sakit, kecelakaan</li>
+                                <li>Bukan untuk liburan atau beli gadget!</li>
+                                <li>Kalau terpakai, segera isi kembali</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-icon">🚀</span>
+                            Mulai Investasi Agresif
+                        </div>
+                        <div class="step-content">
+                            <strong>Alokasi Baru:</strong>
+                            <ul>
+                                <li>Investasi: <span class="success">Rp 2.000.000/bulan</span></li>
+                                <li>Reksadana saham, saham blue chip</li>
+                                <li>Emas digital (Pluang, Tokopedia)</li>
+                                <li>Crypto (max 5-10% portofolio)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-title">
+                            <span class="step-icon">🎯</span>
+                            Tabungan Target
+                        </div>
+                        <div class="step-content">
+                            <strong>Tentukan tujuan keuangan:</strong>
+                            <ul>
+                                <li>DP motor/mobil</li>
+                                <li>DP rumah/tanah</li>
+                                <li>Dana nikah</li>
+                                <li>Modal usaha</li>
+                            </ul>
+                            Buat rekening/kantong terpisah untuk tiap tujuan!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SUMMARY BOX -->
+        <div class="summary-box">
+            <h2>🎉 KESIMPULAN RENCANA</h2>
+            <div class="summary-stats">
+                <div class="stat">
+                    <div class="stat-value">18 Juta</div>
+                    <div class="stat-label">Target Dana Darurat</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">6 Bulan</div>
+                    <div class="stat-label">Waktu Pengumpulan</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">3,5 Juta</div>
+                    <div class="stat-label">Nabung per Bulan</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">3 Lapis</div>
+                    <div class="stat-label">Strategi Alokasi</div>
+                </div>
+            </div>
+            <p style="margin-top: 20px; font-size: 1.1em; line-height: 1.6;">
+                <strong>Kunci Sukses:</strong><br>
+                Konsisten nabung 3,5 juta setiap bulan + Disiplin jangan diambil + Alokasikan dengan pintar setelah terkumpul!
+            </p>
+        </div>
+        
+        <!-- EXPENSE TRACKER SECTION -->
+        <div class="tracker-section">
+            <h2 class="tracker-title">📊 TRACKER KEUANGAN INTERAKTIF</h2>
+            <p class="tracker-subtitle">Kelola gaji bulanan yang berubah-ubah dan catat pengeluaran mendadak untuk lihat dampaknya!</p>
+            
+            <div class="tracker-container">
+                <div class="input-section">
+                    <div class="input-tabs">
+                        <button class="tab-btn active" onclick="switchTab('salary')">💰 Atur Gaji</button>
+                        <button class="tab-btn" onclick="switchTab('expense')">📝 Pengeluaran</button>
+                    </div>
+                    
+                    <!-- SALARY INPUT TAB -->
+                    <div id="salaryTab" class="tab-content active">
+                        <h3>💰 Atur Gaji Bulanan</h3>
+                        <p style="font-size: 0.9em; color: #666; margin-bottom: 15px;">
+                            Jika gaji berbeda di bulan tertentu (dapat bonus, THR, lembur), masukkan di sini.
+                        </p>
+                        <div class="input-group">
+                            <label>Bulan ke-</label>
+                            <select id="salaryMonth" class="input-field">
+                                <option value="1">Bulan 1</option>
+                                <option value="2">Bulan 2</option>
+                                <option value="3">Bulan 3</option>
+                                <option value="4">Bulan 4</option>
+                                <option value="5">Bulan 5</option>
+                                <option value="6">Bulan 6</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Gaji Bulan Ini (Rp)</label>
+                            <input type="number" id="salaryAmount" class="input-field" placeholder="6500000">
+                            <small style="color: #999;">Default: Rp 5.357.982</small>
+                        </div>
+                        <div class="input-group">
+                            <label>Catatan (opsional)</label>
+                            <input type="text" id="salaryNote" class="input-field" placeholder="Misal: Dapat bonus kinerja">
+                        </div>
+                        <button onclick="setSalary()" class="btn-add">Set Gaji Bulan Ini</button>
+                        
+                        <div class="salary-list-mini">
+                            <h4 style="margin-top: 20px; margin-bottom: 10px; color: #667eea;">📋 Gaji yang Disesuaikan:</h4>
+                            <div id="salaryListMini"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- EXPENSE INPUT TAB -->
+                    <div id="expenseTab" class="tab-content">
+                        <h3>📝 Tambah Pengeluaran Mendadak</h3>
+                        <p style="font-size: 0.9em; color: #666; margin-bottom: 15px;">
+                            Catat pengeluaran yang mengurangi budget tabungan Anda.
+                        </p>
+                        <div class="input-group">
+                            <label>Bulan ke-</label>
+                            <select id="expenseMonth" class="input-field">
+                                <option value="1">Bulan 1</option>
+                                <option value="2">Bulan 2</option>
+                                <option value="3">Bulan 3</option>
+                                <option value="4">Bulan 4</option>
+                                <option value="5">Bulan 5</option>
+                                <option value="6">Bulan 6</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Deskripsi</label>
+                            <input type="text" id="expenseDesc" class="input-field" placeholder="Misal: Servis motor, berobat, dll">
+                        </div>
+                        <div class="input-group">
+                            <label>Jumlah (Rp)</label>
+                            <input type="number" id="expenseAmount" class="input-field" placeholder="500000">
+                        </div>
+                        <button onclick="addExpense()" class="btn-add">Tambah Pengeluaran</button>
+                    </div>
+                </div>
+                
+                <div class="summary-section">
+                    <h3>📋 Ringkasan Transaksi</h3>
+                    
+                    <div class="transaction-summary">
+                        <div class="summary-card positive">
+                            <div class="summary-card-icon">💰</div>
+                            <div class="summary-card-content">
+                                <div class="summary-card-label">Total Gaji 6 Bulan</div>
+                                <div class="summary-card-value" id="totalSalary">Rp 32.147.892</div>
+                            </div>
+                        </div>
+                        <div class="summary-card negative">
+                            <div class="summary-card-icon">💸</div>
+                            <div class="summary-card-content">
+                                <div class="summary-card-label">Total Pengeluaran Mendadak</div>
+                                <div class="summary-card-value" id="totalExpensesCard">Rp 0</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="expense-list">
+                        <h4 style="margin-bottom: 10px; color: #667eea;">Pengeluaran Mendadak:</h4>
+                        <div id="expenseList">
+                            <p class="empty-state">Belum ada pengeluaran mendadak. Semoga lancar! 🤞</p>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-summary">
+                        <h3>💥 Dampak ke Target Dana Darurat</h3>
+                        <div class="impact-grid">
+                            <div class="impact-item">
+                                <div class="impact-label">Target Awal</div>
+                                <div class="impact-value original">Rp 18.000.000</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-label">Tabungan Ideal (Tanpa Pengeluaran)</div>
+                                <div class="impact-value" id="idealSavings">Rp 21.000.000</div>
+                            </div>
+                            <div class="impact-item highlight-box">
+                                <div class="impact-label">💎 Dana Terkumpul di Bulan 6</div>
+                                <div class="impact-value final" id="finalAmount">Rp 18.000.000</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-label">Selisih dari Target</div>
+                                <div class="impact-value" id="difference">Rp 0</div>
+                            </div>
+                        </div>
+                        
+                        <div id="recommendations" class="recommendations">
+                            <h4>💡 Rekomendasi:</h4>
+                            <p id="recommendationText">Tetap konsisten menabung sesuai budget untuk mencapai target!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="visual-progress">
+                <h3>📈 Visualisasi Progress per Bulan</h3>
+                <div id="progressBars" class="progress-container">
+                    <!-- Progress bars will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            let expenses = [];
+            let salaries = {
+                1: 5357982,
+                2: 5357982,
+                3: 5357982,
+                4: 5357982,
+                5: 5357982,
+                6: 5357982
+            };
+            let salaryNotes = {};
+            
+            const defaultSalary = 5357982;
+            const fixedExpenses = 1800000; // Kebutuhan pokok + gaya hidup
+            const totalMonths = 6;
+            const finalTarget = 18000000;
+            
+            function formatRupiah(amount) {
+                return 'Rp ' + amount.toLocaleString('id-ID');
+            }
+            
+            function switchTab(tab) {
+                const tabs = document.querySelectorAll('.tab-btn');
+                const contents = document.querySelectorAll('.tab-content');
+                
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+                
+                if (tab === 'salary') {
+                    tabs[0].classList.add('active');
+                    document.getElementById('salaryTab').classList.add('active');
+                } else {
+                    tabs[1].classList.add('active');
+                    document.getElementById('expenseTab').classList.add('active');
+                }
+            }
+            
+            function setSalary() {
+                const month = parseInt(document.getElementById('salaryMonth').value);
+                const amount = parseInt(document.getElementById('salaryAmount').value);
+                const note = document.getElementById('salaryNote').value;
+                
+                if (!amount || amount <= 0) {
+                    alert('Mohon masukkan gaji yang valid!');
+                    return;
+                }
+                
+                salaries[month] = amount;
+                if (note) {
+                    salaryNotes[month] = note;
+                }
+                
+                // Clear inputs
+                document.getElementById('salaryAmount').value = '';
+                document.getElementById('salaryNote').value = '';
+                
+                updateSalaryList();
+                updateDisplay();
+            }
+            
+            function resetSalary(month) {
+                salaries[month] = defaultSalary;
+                delete salaryNotes[month];
+                updateSalaryList();
+                updateDisplay();
+            }
+            
+            function updateSalaryList() {
+                const container = document.getElementById('salaryListMini');
+                const adjustedMonths = Object.keys(salaries).filter(m => salaries[m] !== defaultSalary);
+                
+                if (adjustedMonths.length === 0) {
+                    container.innerHTML = '<p style="font-size: 0.9em; color: #999; font-style: italic;">Semua bulan menggunakan gaji default</p>';
+                } else {
+                    container.innerHTML = adjustedMonths.map(month => {
+                        const salary = salaries[month];
+                        const note = salaryNotes[month] || '';
+                        const isIncrease = salary > defaultSalary;
+                        
+                        return `
+                            <div class="salary-record ${isIncrease ? 'positive' : 'negative'}">
+                                <div>
+                                    <div style="font-weight: bold;">Bulan ${month}</div>
+                                    <div style="font-size: 0.9em;">${formatRupiah(salary)}</div>
+                                    ${note ? `<div style="font-size: 0.85em; color: #666;">${note}</div>` : ''}
+                                </div>
+                                <button onclick="resetSalary(${month})" class="btn-reset">↺</button>
+                            </div>
+                        `;
+                    }).join('');
+                }
+            }
+            
+            function addExpense() {
+                const month = parseInt(document.getElementById('expenseMonth').value);
+                const desc = document.getElementById('expenseDesc').value;
+                const amount = parseInt(document.getElementById('expenseAmount').value);
+                
+                if (!desc || !amount || amount <= 0) {
+                    alert('Mohon isi semua field dengan benar!');
+                    return;
+                }
+                
+                expenses.push({
+                    month: month,
+                    description: desc,
+                    amount: amount
+                });
+                
+                // Clear inputs
+                document.getElementById('expenseDesc').value = '';
+                document.getElementById('expenseAmount').value = '';
+                
+                updateDisplay();
+            }
+            
+            function deleteExpense(index) {
+                expenses.splice(index, 1);
+                updateDisplay();
+            }
+            
+            function updateDisplay() {
+                // Update expense list
+                const expenseList = document.getElementById('expenseList');
+                if (expenses.length === 0) {
+                    expenseList.innerHTML = '<p class="empty-state">Belum ada pengeluaran mendadak. Semoga lancar! 🤞</p>';
+                } else {
+                    expenseList.innerHTML = expenses.map((exp, index) => `
+                        <div class="expense-record">
+                            <div class="expense-record-info">
+                                <div class="expense-record-month">Bulan ${exp.month}</div>
+                                <div class="expense-record-desc">${exp.description}</div>
+                                <div class="expense-record-amount">${formatRupiah(exp.amount)}</div>
+                            </div>
+                            <button onclick="deleteExpense(${index})" class="btn-delete">🗑️</button>
+                        </div>
+                    `).join('');
+                }
+                
+                // Calculate totals
+                const totalSalary = Object.values(salaries).reduce((sum, sal) => sum + sal, 0);
+                const totalExpenses = expenses.reduce((sum, exp) => sum + exp.amount, 0);
+                
+                // Calculate monthly savings with variable salary and expenses
+                const monthlySavings = Array(totalMonths).fill(0).map((_, i) => {
+                    const monthSalary = salaries[i + 1];
+                    const monthExpenses = expenses
+                        .filter(exp => exp.month === i + 1)
+                        .reduce((sum, exp) => sum + exp.amount, 0);
+                    return monthSalary - fixedExpenses - monthExpenses;
+                });
+                
+                // Calculate ideal savings (without unexpected expenses)
+                const idealMonthlySavings = Array(totalMonths).fill(0).map((_, i) => {
+                    const monthSalary = salaries[i + 1];
+                    return monthSalary - fixedExpenses;
+                });
+                
+                // Calculate cumulative
+                let cumulative = 0;
+                const cumulativeSavings = monthlySavings.map(saving => {
+                    cumulative += saving;
+                    return cumulative;
+                });
+                
+                let idealCumulative = 0;
+                const idealCumulativeSavings = idealMonthlySavings.map(saving => {
+                    idealCumulative += saving;
+                    return idealCumulative;
+                });
+                
+                const finalAmount = cumulativeSavings[totalMonths - 1];
+                const idealFinal = idealCumulativeSavings[totalMonths - 1];
+                const difference = finalAmount - finalTarget;
+                
+                // Update summary cards
+                document.getElementById('totalSalary').textContent = formatRupiah(totalSalary);
+                document.getElementById('totalExpensesCard').textContent = formatRupiah(totalExpenses);
+                document.getElementById('idealSavings').textContent = formatRupiah(idealFinal);
+                document.getElementById('finalAmount').textContent = formatRupiah(finalAmount);
+                document.getElementById('difference').textContent = formatRupiah(Math.abs(difference));
+                
+                const diffElement = document.getElementById('difference');
+                if (difference < 0) {
+                    diffElement.style.color = '#ef4444';
+                    diffElement.parentElement.querySelector('.impact-label').textContent = '⚠️ Kurang dari Target';
+                } else {
+                    diffElement.style.color = '#10b981';
+                    diffElement.parentElement.querySelector('.impact-label').textContent = '✅ Lebih dari Target';
+                }
+                
+                // Update recommendations
+                updateRecommendations(difference, totalExpenses, monthlySavings, idealFinal, finalAmount);
+                
+                // Update progress bars
+                updateProgressBars(monthlySavings, cumulativeSavings, idealCumulativeSavings);
+            }
+            
+            function updateRecommendations(difference, totalExpenses, monthlySavings, idealFinal, finalAmount) {
+                const recText = document.getElementById('recommendationText');
+                let recommendation = '';
+                
+                const potentialLoss = idealFinal - finalAmount;
+                
+                if (difference >= 0) {
+                    if (potentialLoss > 0) {
+                        recommendation = `✅ Bagus! Meskipun ada pengeluaran mendadak ${formatRupiah(totalExpenses)}, Anda tetap mencapai target ${formatRupiah(finalTarget)}!<br><br>
+                        💡 <strong>Potensi lebih:</strong> Tanpa pengeluaran mendadak, Anda bisa dapat ${formatRupiah(idealFinal)} (lebih ${formatRupiah(potentialLoss)})`;
+                    } else {
+                        recommendation = `🎉 Luar biasa! Dengan gaji yang meningkat, Anda mencapai ${formatRupiah(finalAmount)} - lebih ${formatRupiah(difference)} dari target!<br><br>
+                        💎 Pertimbangkan untuk meningkatkan target dana darurat atau mulai investasi!`;
+                    }
+                } else {
+                    const shortfall = Math.abs(difference);
+                    const monthsLeft = monthlySavings.filter((s, i) => i < totalMonths && s > 0).length;
+                    const additionalNeeded = monthsLeft > 0 ? Math.ceil(shortfall / monthsLeft) : shortfall;
+                    const extraMonths = Math.ceil(shortfall / (defaultSalary - fixedExpenses));
+                    
+                    recommendation = `⚠️ Dengan pengeluaran mendadak ${formatRupiah(totalExpenses)}, Anda kurang ${formatRupiah(shortfall)} dari target.<br><br>
+                    <strong>Pilihan Solusi:</strong><br>
+                    1️⃣ Tambah tabungan ${formatRupiah(additionalNeeded)}/bulan di bulan yang tersisa<br>
+                    2️⃣ Perpanjang target ${extraMonths} bulan lagi<br>
+                    3️⃣ Cari penghasilan tambahan (freelance, bonus, lembur)<br>
+                    4️⃣ Kurangi pengeluaran mendadak di bulan berikutnya`;
+                }
+                
+                recText.innerHTML = recommendation;
+            }
+            
+            function updateProgressBars(monthlySavings, cumulativeSavings, idealCumulativeSavings) {
+                const container = document.getElementById('progressBars');
+                const maxCumulative = Math.max(finalTarget, ...idealCumulativeSavings);
+                
+                container.innerHTML = monthlySavings.map((saving, i) => {
+                    const cumulative = cumulativeSavings[i];
+                    const idealCumulative = idealCumulativeSavings[i];
+                    const percentage = (cumulative / maxCumulative) * 100;
+                    const idealPercentage = (idealCumulative / maxCumulative) * 100;
+                    
+                    const monthSalary = salaries[i + 1];
+                    const isCustomSalary = monthSalary !== defaultSalary;
+                    const expenseInMonth = expenses.filter(exp => exp.month === i + 1);
+                    const salaryNote = salaryNotes[i + 1];
+                    
+                    const savingColor = saving >= (monthSalary - fixedExpenses) ? 'positive' : 
+                                       saving > 0 ? 'warning' : 'negative';
+                    
+                    return `
+                        <div class="month-progress">
+                            <div class="month-progress-header">
+                                <span class="month-progress-label">Bulan ${i + 1}</span>
+                                <span class="month-progress-amount ${savingColor}">
+                                    ${formatRupiah(saving)}
+                                </span>
+                            </div>
+                            
+                            ${isCustomSalary ? `
+                                <div class="month-salary-info">
+                                    💰 Gaji: ${formatRupiah(monthSalary)} 
+                                    ${salaryNote ? `<span style="font-size: 0.85em;">(${salaryNote})</span>` : ''}
+                                </div>
+                            ` : ''}
+                            
+                            ${expenseInMonth.length > 0 ? `
+                                <div class="month-expenses">
+                                    ${expenseInMonth.map(exp => `<div class="mini-expense">💸 ${exp.description}: ${formatRupiah(exp.amount)}</div>`).join('')}
+                                </div>
+                            ` : ''}
+                            
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill ideal" style="width: ${Math.min(idealPercentage, 100)}%"></div>
+                                    <div class="progress-bar-fill actual ${savingColor}" style="width: ${Math.min(percentage, 100)}%"></div>
+                                </div>
+                                <div class="progress-legend">
+                                    <span class="legend-item"><span class="legend-color ideal"></span> Ideal: ${formatRupiah(idealCumulative)}</span>
+                                    <span class="legend-item"><span class="legend-color actual"></span> Aktual: ${formatRupiah(cumulative)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+            
+            // Initialize display
+            updateSalaryList();
+            updateDisplay();
+        </script>
+        
+    </div>
+</body>
+</html>
